@@ -383,24 +383,24 @@ nav {
 }
 
 /* Specific skill levels */
-.html-css {
+.camera-operator {
     width: 95%;
 }
 
-.javascript {
-    width: 40%;
+.live-stream {
+    width: 95%;
 }
 
 .react {
     width: 85%;
 }
 
-.python {
-    width: 75%;
+.concept {
+    width: 90%;
 }
 
-.sql {
-    width: 70%;
+.production{
+    width: 90%;
 }
 
 .ui-ux {
