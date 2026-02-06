@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 4. Send Actual Request
             try {
                 // Using /ajax/ endpoint to receive a JSON response instead of a redirect
-                const response = await fetch("https://formsubmit.co/ajax/talimonosimel@gmail.com", {
+                const response = await fetch("https://formsubmit.co/ajax/bensonchome80@gmail.com", {
                     method: "POST",
                     headers: { 
                         'Content-Type': 'application/json',
