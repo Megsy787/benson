@@ -23,7 +23,7 @@ const experiences = [
     title: 'Video Producer',
     company: 'Reconciliation at the Cross Ministry',
     location: 'Nairobi',
-    period: '2023 – 2025',
+    period: '2023 – Present',
     description: [
       'Operate professional camera systems to capture high-quality cinematic visuals under varying lighting conditions.',
       'Lead creative and technical teams on set to execute artistic visions and deliver compelling visual narratives.',
@@ -36,7 +36,7 @@ const experiences = [
     title: 'Freelance Camera Operator',
     company: 'Independent Projects',
     location: 'Kenya',
-    period: 'Ongoing',
+    period: 'Completed',
     description: [
       'Tukuza Award: Served as a core Camera Operator, capturing high-quality live event footage for the prestigious award ceremony.',
       'Manyani NSY Graduation: Operated professional camera equipment executing precise framing and focus for event broadcasting and archiving.'
