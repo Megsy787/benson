@@ -108,10 +108,11 @@ export default function Projects() {
                   <Image 
                     src={project.image} 
                     alt={project.title} 
-                    fill
+                    width={800}
+                    height={600}
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', minHeight: '100%' }}
                   />
                 </div>
                 <div className="project-info">
