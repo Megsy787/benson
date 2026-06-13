@@ -73,6 +73,9 @@ export default function Projects() {
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">Cinematic Portfolio</h2>
+        <p className="section-description" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem auto', color: 'var(--text-secondary, #a3a3a3)', lineHeight: '1.6' }}>
+          A showcase of my work in video production, combining the visionary storytelling of a director with technical precision. My expertise spans professional camera operation, live broadcast engineering, and post-production editing to deliver high-quality, engaging visual narratives.
+        </p>
         
         <div className="projects-filter">
           {categories.map(cat => (
@@ -106,6 +109,7 @@ export default function Projects() {
                     src={project.image} 
                     alt={project.title} 
                     fill
+                    priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
