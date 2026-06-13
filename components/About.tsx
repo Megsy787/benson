@@ -71,7 +71,7 @@ export default function About() {
                   <span><strong>Location:</strong> Nairobi, Kenya</span>
                 </div>
               </div>
-              <a href="/static/BensonChome.pdf" className="btn btn-primary" download>Download Portfolio PDF</a>
+              <a href="/static/Benson_Chome_CV.pdf" className="btn btn-primary" target="_blank" rel="noopener noreferrer">View CV</a>
             </div>
           </motion.div>
 
