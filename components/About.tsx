@@ -10,7 +10,7 @@ const skillCategories = [
       { name: 'Camera Operation', icon: 'fa-camera' },
       { name: 'Focus Pulling', icon: 'fa-crosshairs' },
       { name: 'Lighting Design', icon: 'fa-lightbulb' },
-      { name: 'Gimbal & Drone', icon: 'fa-vr-cardboard' },
+      { name: 'Gimbal', icon: 'fa-vr-cardboard' },
       { name: 'Composition', icon: 'fa-images' },
       { name: 'Visual Aesthetics', icon: 'fa-eye' },
     ]
@@ -21,6 +21,7 @@ const skillCategories = [
     skills: [
       { name: 'Video Editing', icon: 'fa-cut' },
       { name: 'Adobe Premiere Pro', icon: 'fa-layer-group' },
+      { name: 'Color Grading', icon: 'fa-palette' },
     ]
   },
   {
@@ -42,17 +43,30 @@ export default function About() {
       <div className="container">
         <div className="split-layout">
           {/* Left Column: Creative Vision */}
-          <motion.div 
+          <motion.div
             className="vision-column"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <div className="section-eyebrow">About Me</div>
             <h2 className="section-title" style={{ textAlign: 'left' }}>Creative Vision</h2>
             <div className="about-text">
-              <p>I am a dedicated visual professional with a passion for <strong>Cinematography</strong> and <strong>Creative Direction</strong>. My journey has taken me from the energy of live award shows like the Tukuza Awards to specialized VIP camera operations for high-profile events in Manyani.</p>
-              <p>Every frame I capture is a blend of storytelling and technical excellence. Whether I am directing a live stream, producing a cinematic project, or capturing the perfect still, my focus is on delivering a narrative that resonates. I thrive on the challenge of high-pressure environments, ensuring every production is seamless and visually stunning.</p>
+              <p>
+                I am a dedicated visual professional with a passion for{' '}
+                <strong>Cinematography</strong> and <strong>Creative Direction</strong>. My journey
+                has taken me from the energy of live award shows like the Tukuza Awards to
+                specialized VIP camera operations for high-profile events in Manyani.
+              </p>
+              <p>
+                Every frame I capture is a blend of storytelling and technical excellence. Whether
+                I am directing a live stream, producing a cinematic project, or capturing the
+                perfect still, my focus is on delivering a narrative that resonates. I thrive on
+                the challenge of high-pressure environments, ensuring every production is seamless
+                and visually stunning.
+              </p>
+
               <div className="about-details">
                 <div className="detail-item">
                   <i className="fas fa-user"></i>
@@ -71,34 +85,48 @@ export default function About() {
                   <span><strong>Location:</strong> Nairobi, Kenya</span>
                 </div>
               </div>
-              <a href="/static/Benson_Chome_CV.pdf" className="btn btn-primary" target="_blank" rel="noopener noreferrer">View CV</a>
+
+              <a
+                href="/static/Benson_Chome_CV.pdf"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-download"></i>
+                Download CV
+              </a>
             </div>
           </motion.div>
 
           {/* Right Column: Technical Expertise */}
-          <motion.div 
+          <motion.div
             className="skills-column"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <div className="section-eyebrow">Skills</div>
             <h2 className="section-title" style={{ textAlign: 'left' }}>Technical Expertise</h2>
             <div className="skills-container">
               {skillCategories.map((category, idx) => (
-                <motion.div 
+                <motion.div
                   key={category.title}
                   className="skill-category"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  transition={{ duration: 0.45, delay: idx * 0.1 }}
                 >
-                  <h3><i className={`fas ${category.icon}`}></i> {category.title}</h3>
+                  <h3>
+                    <i className={`fas ${category.icon}`}></i>
+                    {category.title}
+                  </h3>
                   <div className="skills-grid">
                     {category.skills.map((skill) => (
                       <div key={skill.name} className="skill-badge">
-                        <i className={`fas ${skill.icon}`}></i> {skill.name}
+                        <i className={`fas ${skill.icon}`}></i>
+                        {skill.name}
                       </div>
                     ))}
                   </div>

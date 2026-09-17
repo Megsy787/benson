@@ -46,53 +46,44 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="experience" style={{ padding: '80px 0', backgroundColor: 'var(--darker-color)' }}>
-      <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
+    <section id="experience" className="experience">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Professional Experience</h2>
-          
-          <div className="experience-timeline" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginTop: '40px' }}>
+          <div className="section-header">
+            <div className="section-eyebrow">Career</div>
+            <h2 className="section-title">Professional Experience</h2>
+          </div>
+
+          <div className="experience-timeline">
             {experiences.map((exp, index) => (
-              <motion.div 
+              <motion.div
                 key={exp.id}
                 className="experience-card"
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                style={{ 
-                  backgroundColor: 'var(--glass-bg)', 
-                  padding: '30px', 
-                  borderRadius: '16px',
-                  border: '1px solid var(--glass-border)',
-                  boxShadow: 'var(--shadow)',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
               >
-                {/* Accent line on the left */}
-                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: 'var(--gradient-1)' }} />
-                
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '15px' }}>
+                <div className="accent-line" />
+
+                <div className="exp-header">
                   <div>
-                    <h3 style={{ fontSize: '1.5rem', marginBottom: '5px', color: 'var(--light-color)' }}>{exp.title}</h3>
-                    <h4 style={{ fontSize: '1.1rem', color: 'var(--gray-color)', fontWeight: '500' }}>
-                      <span style={{ color: 'var(--primary-color)' }}>{exp.company}</span> <span style={{ opacity: 0.7 }}>— {exp.location}</span>
+                    <h3 className="exp-title">{exp.title}</h3>
+                    <h4 className="exp-company">
+                      <span>{exp.company}</span> &mdash; {exp.location}
                     </h4>
                   </div>
-                  <div style={{ padding: '5px 15px', backgroundColor: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.2)', borderRadius: '20px', fontSize: '0.9rem', color: 'var(--primary-color)', marginTop: '5px', fontWeight: '600' }}>
-                    {exp.period}
-                  </div>
+                  <div className="exp-period">{exp.period}</div>
                 </div>
-                
-                <ul style={{ listStyleType: 'disc', paddingLeft: '20px', color: 'var(--gray-color)', lineHeight: '1.7', fontSize: '0.95rem' }}>
+
+                <ul className="exp-list">
                   {exp.description.map((item, i) => (
-                    <li key={i} style={{ marginBottom: '8px' }}>{item}</li>
+                    <li key={i}>{item}</li>
                   ))}
                 </ul>
               </motion.div>

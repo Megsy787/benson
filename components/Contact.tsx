@@ -53,7 +53,13 @@ export default function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Start a Project</h2>
+        <div className="section-header">
+          <div className="section-eyebrow">Contact</div>
+          <h2 className="section-title">Start a Project</h2>
+          <p className="section-subtitle">
+            Ready to bring your vision to life? Let&apos;s collaborate on something extraordinary.
+          </p>
+        </div>
         <div className="contact-content">
           <motion.div 
             className="contact-info"

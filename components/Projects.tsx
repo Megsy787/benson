@@ -6,12 +6,22 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const projects = [
   {
+    id: 7,
+    title: '80+1 Covenant Years',
+    description: 'Served as the main photographer for this milestone celebration — capturing every heartfelt moment, portrait, and memory of a landmark day with precision and artistry.',
+    category: 'stills',
+    image: '/static/80+1.JPG',
+    tags: ['Main Photographer', 'Portraiture', 'Event Coverage'],
+    link: 'https://bigben98.pixieset.com/801yearscovenantyears/'
+  },
+  {
     id: 1,
     title: 'Manyani KWS Cadet Graduation',
     description: 'VIP Camera Operations for high-profile graduation ceremony involving national leadership.',
     category: 'live',
     image: '/static/ben3.jpeg',
-    tags: ['Live Switching', 'Camera Op']
+    tags: ['Live Switching', 'Camera Op'],
+    link: null
   },
   {
     id: 2,
@@ -19,7 +29,8 @@ const projects = [
     description: 'Multi-camera coverage of the prestigious Tukuza Awards at KICC, capturing award-winning moments.',
     category: 'live',
     image: '/static/ben2.jpeg',
-    tags: ['Event Coverage', 'Live Streaming']
+    tags: ['Event Coverage', 'Live Streaming'],
+    link: null
   },
   {
     id: 3,
@@ -27,7 +38,8 @@ const projects = [
     description: 'Directing and producing high-quality cinematic content with a focus on powerful storytelling.',
     category: 'cinematic',
     image: '/static/vid.jpeg',
-    tags: ['Directing', 'Storytelling']
+    tags: ['Directing', 'Storytelling'],
+    link: null
   },
   {
     id: 4,
@@ -35,7 +47,8 @@ const projects = [
     description: 'Exploring human connection and environmental beauty through high-resolution still photography.',
     category: 'stills',
     image: '/static/ben1.jpeg',
-    tags: ['Portraiture', 'Composition']
+    tags: ['Portraiture', 'Composition'],
+    link: null
   },
   {
     id: 5,
@@ -43,16 +56,10 @@ const projects = [
     description: 'Coordinating complex shoots and ensuring every technical aspect aligns with the creative vision.',
     category: 'cinematic',
     image: '/static/production-logistics.jpeg',
-    tags: ['Production', 'Leadership']
+    tags: ['Production', 'Leadership'],
+    link: null
   },
-  {
-    id: 6,
-    title: 'Broadcasting Excellence',
-    description: 'Ensuring technical reliability and high visual standards for multi-platform live broadcasts.',
-    category: 'live',
-    image: '/static/ben5.jpeg',
-    tags: ['Switching', 'Tech Ops']
-  }
+
 ]
 
 const categories = [
@@ -65,21 +72,25 @@ const categories = [
 export default function Projects() {
   const [filter, setFilter] = useState('all')
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(p => p.category === filter)
 
   return (
     <section id="projects" className="projects">
       <div className="container">
-        <h2 className="section-title">Cinematic Portfolio</h2>
-        <p className="section-description" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem auto', color: 'var(--text-secondary, #a3a3a3)', lineHeight: '1.6' }}>
-          A showcase of my work in video production, combining the visionary storytelling of a director with technical precision. My expertise spans professional camera operation, live broadcast engineering, and post-production editing to deliver high-quality, engaging visual narratives.
-        </p>
-        
+        <div className="section-header">
+          <div className="section-eyebrow">Portfolio</div>
+          <h2 className="section-title">Cinematic Work</h2>
+          <p className="section-subtitle">
+            A showcase of my work in video production — combining the visionary storytelling of a
+            director with technical precision across live broadcasts, cinematic projects, and photography.
+          </p>
+        </div>
+
         <div className="projects-filter">
           {categories.map(cat => (
-            <button 
+            <button
               key={cat.id}
               className={`filter-btn ${filter === cat.id ? 'active' : ''}`}
               onClick={() => setFilter(cat.id)}
@@ -89,13 +100,13 @@ export default function Projects() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           layout
           className="projects-grid"
         >
           <AnimatePresence mode='popLayout'>
             {filteredProjects.map((project) => (
-              <motion.div 
+              <motion.div
                 key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -105,14 +116,14 @@ export default function Projects() {
                 className="project-card"
               >
                 <div className="project-image">
-                  <Image 
-                    src={project.image} 
-                    alt={project.title} 
+                  <Image
+                    src={project.image}
+                    alt={project.title}
                     width={800}
                     height={600}
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ width: '100%', height: 'auto', objectFit: 'cover', minHeight: '100%' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="project-info">
@@ -123,6 +134,18 @@ export default function Projects() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-gallery-btn"
+                    >
+                      <i className="fas fa-images"></i>
+                      View Gallery
+                      <i className="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
